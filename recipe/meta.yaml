@@ -1,18 +1,18 @@
 {% set name = "azure-devops" %}
-{% set version = "5.1.0b4" %}
+{% set version = "7.1.0b2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "22f3934e323db4bb61aea0ae588062225c06c20f60ad37566e8399127ae8dd82"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 7e3d062ba458db7a22a04311ce915a0266f3a8fdcb640b365e783d87309a6d02
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -164,13 +164,13 @@ test:
     - azure.devops.v5_1.work_item_tracking_process_template
 
 about:
-  home: "https://github.com/Microsoft/vsts-python-api"
-  license: "MIT"
-  license_family: "MIT"
-  license_file: "LICENSE.txt"
-  summary: "Python wrapper around the Azure DevOps 5.x APIs"
-  doc_url: "https://docs.microsoft.com/en-us/azure/devops/integrate/index?view=azure-devops"
-  dev_url: "https://github.com/Microsoft/vsts-python-api"
+  home: https://github.com/Microsoft/vsts-python-api
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: Python wrapper around the Azure DevOps 5.x APIs
+  doc_url: https://docs.microsoft.com/en-us/azure/devops/integrate/index?view=azure-devops
+  dev_url: https://github.com/Microsoft/vsts-python-api
 
 extra:
   recipe-maintainers:
